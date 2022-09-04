@@ -1,0 +1,140 @@
+.navbar {
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.qualion-banner {
+  height: 60px;
+  cursor: pointer;
+}
+
+.navbar button {
+  font-size: 1.2rem;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.navbar button:hover {
+  background-color: white;
+  color: black;
+}
+
+.search-icon {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.search-bar {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-input {
+  background: none;
+  outline: none;
+  max-width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.7);
+  font-size: 24px;
+  color: white;
+  margin-right: 1rem;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-shrink: 0;
+}
+
+.nav-dropdown-simple {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+  .search-input {
+    font-size: 1rem;
+  }
+
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar button {
+    display: none;
+  }
+
+  .nav-dropdown-simple {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 160px;
+    width: 250px;
+    max-height: 70vh;
+    background: rgba(22, 27, 45, 0.9);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .menu-categories h1,
+  .menu-pages h1 {
+    font-size: 14px;
+    line-height: 30px;
+    border-bottom: 3px solid #111;
+    padding: 0 0 5px;
+    transition: 0.3s border-bottom;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-block: 25px;
+    width: 180px;
+  }
+
+  .menu-categories h1 {
+    margin-bottom: 0;
+  }
+
+  .menu-categories h1:hover,
+  .menu-pages h1:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #00f;
+  }
+}
+
+@media (max-width: 600px) {
+  .qualion-banner {
+    display: none;
+  }
+
+  .nav-dropdown-simple {
+    top: 44px;
+    left: 0;
+  }
+
+  .search-input {
+    font-size: 0.8rem;
+  }
+}

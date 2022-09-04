@@ -1,0 +1,70 @@
+.footer {
+  background-color: black;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer button {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+}
+
+footer button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.up-arrow {
+  width: 1.5rem;
+}
+
+.up-arrow:hover {
+  color: black;
+}
+
+.qualion-logo {
+  width: 60px;
+}
+
+.logo-copyright {
+  color: #414c75;
+  font-size: 12px;
+  margin-block: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .qualion-logo {
+    width: 50px;
+  }
+
+  .up-arrow {
+    width: 1.3rem;
+  }
+
+  .footer button {
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    right: 20px;
+    bottom: 40px;
+  }
+}
