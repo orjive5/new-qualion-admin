@@ -98,7 +98,7 @@ const Header = ({ setFoundData }) => {
   };
 
   const viewWebsite = () => {
-    window.open('http://localhost:3000/', '_blank', 'noopener,noreferrer');
+    window.open('https://marvelous-squirrel-227f4a.netlify.app/', '_blank', 'noopener,noreferrer');
   };
 
   useEffect(() => {
@@ -163,12 +163,7 @@ const Header = ({ setFoundData }) => {
             {currentLocation !== '/posts/new' && (
               <h1 onClick={() => navigate('/posts/new')}>NEW POST</h1>
             )}
-            <h1
-              onClick={() =>
-                window.open('http://localhost:3000/', '_blank', 'noopener,noreferrer')
-              }>
-              VIEW WEBSITE
-            </h1>
+            <h1 onClick={viewWebsite}>VIEW WEBSITE</h1>
             <h1 onClick={logOut}>LOG OUT</h1>
           </div>
         </div>
