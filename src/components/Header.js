@@ -19,7 +19,7 @@ const Header = ({ setFoundData }) => {
 
   const getAllData = () => {
     axios
-      .get('http://localhost:8000/posts')
+      .get('https://qualion-blog.herokuapp.com/posts')
       .then((res) => {
         const publishedPosts = res.data.filter((element) => element.isPublished === true).reverse();
         setAllData(publishedPosts);
@@ -77,7 +77,7 @@ const Header = ({ setFoundData }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:8000/protected', {
+      .get('https://qualion-blog.herokuapp.com/protected', {
         headers: {
           Authorization: token
         }

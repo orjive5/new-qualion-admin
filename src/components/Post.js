@@ -27,7 +27,7 @@ const Post = () => {
 
   const loadPosts = () => {
     axios
-      .get('http://localhost:8000/posts')
+      .get('https://qualion-blog.herokuapp.com/posts')
       .then(function (response) {
         const post = response.data.find((post) => post._id === postId);
         setPost(post);
@@ -55,7 +55,7 @@ const Post = () => {
 
   const togglePublished = () => {
     axios
-      .put(`http://localhost:8000/posts/${postId}`, { isPublished: !published }, { headers })
+      .put(`https://qualion-blog.herokuapp.com/${postId}`, { isPublished: !published }, { headers })
       .then((response) => {
         console.log(response);
         setPublished(!published);
@@ -68,7 +68,7 @@ const Post = () => {
   const updatePost = () => {
     axios
       .put(
-        `http://localhost:8000/posts/${postId}`,
+        `https://qualion-blog.herokuapp.com/posts/${postId}`,
         {
           imageUrl: postImage,
           title: postTitle,
@@ -102,7 +102,7 @@ const Post = () => {
 
   const deletePost = () => {
     axios
-      .delete(`http://localhost:8000/posts/${postId}`, { headers })
+      .delete(`https://qualion-blog.herokuapp.com/posts/${postId}`, { headers })
       .then((response) => {
         console.log(response);
         navigate('/');
@@ -115,7 +115,7 @@ const Post = () => {
     const dottedName = splitUrl[splitUrl.length - 2] + '/' + splitUrl[splitUrl.length - 1];
     const imageName = dottedName.slice(0, dottedName.indexOf('.'));
     axios
-      .delete(`http://localhost:8000/delete-image/${imageName}`, { headers })
+      .delete(`https://qualion-blog.herokuapp.com/delete-image/${imageName}`, { headers })
       .then((response) => {
         console.log(response);
       })
@@ -164,7 +164,7 @@ const Post = () => {
       const file = event.target.files[0];
       formData.append('image', file);
       const token = localStorage.getItem('token');
-      const { data } = await axios.post('http://localhost:8000/upload', formData, {
+      const { data } = await axios.post('https://qualion-blog.herokuapp.com/upload', formData, {
         headers: {
           Authorization: token
         }
@@ -176,7 +176,7 @@ const Post = () => {
       const dottedName = splitUrl[splitUrl.length - 2] + '/' + splitUrl[splitUrl.length - 1];
       const imageName = dottedName.slice(0, dottedName.indexOf('.'));
       axios
-        .delete(`http://localhost:8000/delete-image/${imageName}`, { headers })
+        .delete(`https://qualion-blog.herokuapp.com/delete-image/${imageName}`, { headers })
         .then((response) => {
           console.log(response);
         })

@@ -21,7 +21,7 @@ const NewPost = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:8000/protected', {
+      .get('https://qualion-blog.herokuapp.com/protected', {
         headers: {
           Authorization: token
         }
@@ -41,7 +41,7 @@ const NewPost = () => {
     const token = localStorage.getItem('token');
     axios
       .post(
-        'http://localhost:8000/posts',
+        'https://qualion-blog.herokuapp.com/posts',
         {
           title: postTitle,
           subtitle: postSubtitle,
@@ -78,7 +78,7 @@ const NewPost = () => {
       const file = event.target.files[0];
       formData.append('image', file);
       const token = localStorage.getItem('token');
-      const { data } = await axios.post('http://localhost:8000/upload', formData, {
+      const { data } = await axios.post('https://qualion-blog.herokuapp.com/upload', formData, {
         headers: {
           Authorization: token
         }
@@ -231,7 +231,7 @@ const NewPost = () => {
           </label>
           {imageUrl !== '' && (
             <p className="uploaded-image">
-              Uploaded: {imageUrl.replace('http://localhost:8000/uploads/', '')}
+              Uploaded: {imageUrl.replace('https://qualion-blog.herokuapp.com/uploads/', '')}
             </p>
           )}
           <input className="submit-button" type="submit" />

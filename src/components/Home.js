@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:8000/protected', {
+      .get('https://qualion-blog.herokuapp.com/protected', {
         headers: {
           Authorization: token
         }

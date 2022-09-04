@@ -9,7 +9,7 @@ const Main = ({ foundData }) => {
 
   const getAllData = () => {
     axios
-      .get('http://localhost:8000/posts')
+      .get('https://qualion-blog.herokuapp.com/posts')
       .then((res) => {
         setAllData(res.data.reverse());
       })

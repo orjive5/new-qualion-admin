@@ -11,7 +11,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get('http://localhost:8000/protected', {
+      .get('https://qualion-blog.herokuapp.com/protected', {
         headers: {
           Authorization: token
         }
@@ -27,7 +27,7 @@ const Login = () => {
 
   const submit = () => {
     axios
-      .post('http://localhost:8000/auth/login', { email, password })
+      .post('https://qualion-blog.herokuapp.com/auth/login', { email, password })
       .then((user) => {
         localStorage.setItem('token', user.data.token);
         navigate('/');
