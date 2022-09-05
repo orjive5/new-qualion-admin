@@ -1,8 +1,8 @@
 {
   "name": "admin",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@mdi/js": "^7.0.96",
     "@mdi/react": "^1.6.1",
